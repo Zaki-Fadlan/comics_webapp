@@ -25,7 +25,7 @@ class Comic extends Model
     ];
     protected $dates = ['released_at'];
 
-    protected $with = ['comics_type'];
+    protected $with = ['comics_type,comics_status'];
 
     // Relasi dengan tabel comics_types
     public function comics_type(): BelongsTo
@@ -38,7 +38,7 @@ class Comic extends Model
     }
     public function chapters(): HasMany
     {
-        return $this->hasMany(ComicsChapter::class);
+        return $this->hasMany(ComicsChapter::class)->orderBy('chapter_number', 'desc');;
     }
     public function getReleasedAtAttribute($value)
     {

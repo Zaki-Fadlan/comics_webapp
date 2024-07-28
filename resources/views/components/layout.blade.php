@@ -18,7 +18,7 @@
         <x-navbar></x-navbar>
 
         {{-- <x-header>{{ $title }}</x-header> --}}
-        <main class="mx-auto max-w-6xl px-10">
+        <main class="mx-auto py-4 max-w-6xl px-10">
             {{ $slot }}
         </main>
 
@@ -34,6 +34,33 @@
                     class="hover:underline">Name</a>. All Rights Reserved.</span>
         </div>
     </footer>
+    <!-- Tombol Scroll to Top -->
+    <button id="scrollToTopBtn"
+        class="fixed bottom-5 right-5 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-opacity duration-300 opacity-0">
+        ↑
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+            // Menampilkan tombol saat menggulir ke bawah
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) { // Menampilkan tombol jika scroll lebih dari 300px
+                    scrollToTopBtn.style.opacity = '1';
+                } else {
+                    scrollToTopBtn.style.opacity = '0';
+                }
+            });
+
+            // Scroll ke atas saat tombol diklik
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

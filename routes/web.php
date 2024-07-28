@@ -12,9 +12,9 @@ Route::get('/', function () {
 Route::get('/comics', function () {
     $filters = [
         'search' => request('search'),
-        'types' => request('types', []), // Memastikan `types` adalah array
-        'genres' => request('genres', []), // Memastikan `types` adalah array
-        'status' => request('status', []), // Memastikan `types` adalah array
+        'types' => request('types', []),
+        'genres' => request('genres', []),
+        'status' => request('status', []),
     ];
     // Menggunakan filter pada query
     $comics = Comic::filter($filters)

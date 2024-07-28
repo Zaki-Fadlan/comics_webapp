@@ -18,7 +18,7 @@
                         <h3 class="font-medium text-sm tracking-tight block">
                             {{ Str::limit($comic->title, 30) }}
                         </h3>
-                        <h3 class="text-xs font-light"> Chapter</h3>
+                        <h3 class="text-xs font-light">Chapter {{ $comic->chapters->count() }}</h3>
                     </div>
                     <div
                         class="absolute inset-0 rounded-lg bg-black opacity-0 hover:opacity-25 transition-opacity duration-300">
