@@ -32,6 +32,10 @@ class Comic extends Model
     {
         return $this->belongsTo(ComicsType::class, 'type_id');
     }
+    public function comics_status(): BelongsTo
+    {
+        return $this->belongsTo(ComicsType::class, 'status_id');
+    }
     public function chapters(): HasMany
     {
         return $this->hasMany(ComicsChapter::class);
@@ -60,6 +64,11 @@ class Comic extends Model
             $filters['types'] ?? false,
             fn ($query, $types) =>
             $query->whereHas('comics_type', fn ($query) => $query->whereIn('id', $types))
+        );
+        $query->when(
+            $filters['status'] ?? false,
+            fn ($query, $status) =>
+            $query->whereHas('comics_status', fn ($query) => $query->whereIn('id', $status))
         );
     }
 }

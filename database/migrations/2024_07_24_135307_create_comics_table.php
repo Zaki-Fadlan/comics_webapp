@@ -23,7 +23,10 @@ return new class extends Migration
                 table: 'comics_types',
                 indexName: 'comics_type_id'
             );
-            // $table->string('status');
+            $table->foreignId('status_id')->constrained(
+                table: 'comics_statuses',
+                indexName: 'comics_statuses_id'
+            );
             $table->text('synopsis');
             $table->timestamps();
             $table->softDeletes();

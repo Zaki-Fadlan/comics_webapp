@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Comic;
+use App\Models\ComicsStatus;
 use App\Models\ComicsType;
 use App\Models\Genre;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +14,7 @@ Route::get('/comics', function () {
         'search' => request('search'),
         'types' => request('types', []), // Memastikan `types` adalah array
         'genres' => request('genres', []), // Memastikan `types` adalah array
+        'status' => request('status', []), // Memastikan `types` adalah array
     ];
     // Menggunakan filter pada query
     $comics = Comic::filter($filters)
@@ -24,7 +26,8 @@ Route::get('/comics', function () {
         'comics' => $comics,
         'filters' => [
             'genres' => Genre::all(),
-            'types' => ComicsType::all()
+            'types' => ComicsType::all(),
+            'status' => ComicsStatus::all()
         ],
     ]);
 });

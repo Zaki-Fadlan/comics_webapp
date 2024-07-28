@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\ComicsStatus;
 use App\Models\ComicsType;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -26,6 +27,7 @@ class ComicFactory extends Factory
             'released_at' => fake()->dateTime(),
             'cover' => fake()->imageUrl($width = 230, $height = 300),
             'type_id' => ComicsType::factory(),
+            'status_id' => ComicsStatus::factory(),
             'synopsis' => fake()->text(500),
         ];
     }
