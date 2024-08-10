@@ -25,7 +25,7 @@ class Comic extends Model
     ];
     protected $dates = ['released_at'];
 
-    protected $with = ['comics_type,comics_status'];
+    protected $with = ['comics_type','comics_status'];
 
     // Relasi dengan tabel comics_types
     public function comics_type(): BelongsTo

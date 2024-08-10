@@ -8,14 +8,14 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+                        {{-- <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link> --}}
                         <x-nav-link href="/comics" :active="request()->is('comics')">Comics</x-nav-link>
-                        <x-nav-link href="/bookmarks" :active="request()->is('bookmarks')">Bookmarks</x-nav-link>
-                        <x-nav-link href="/history" :active="request()->is('history')">History</x-nav-link>
+                        {{-- <x-nav-link href="/bookmarks" :active="request()->is('bookmarks')">Bookmarks</x-nav-link> --}}
+                        {{-- <x-nav-link href="/history" :active="request()->is('history')">History</x-nav-link> --}}
                     </div>
                 </div>
             </div>
-            <div class="hidden md:block">
+            {{-- <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
                     <!-- Profile dropdown -->
                     <div class="relative ml-3">
@@ -66,7 +66,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
-            </div>
+            </div> --}}
         </div>
     </div>
 
